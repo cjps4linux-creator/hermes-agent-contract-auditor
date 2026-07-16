@@ -1,7 +1,6 @@
 from dataclasses import dataclass
-from typing import List
 
-from .rules import Audit, Finding
+from .rules import Audit
 
 
 @dataclass
