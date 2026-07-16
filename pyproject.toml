@@ -1,0 +1,9 @@
+[project]
+name = "hermes-agent-contract-auditor"
+version = "0.1.0"
+description = "Hermes agent contract audit tool"
+requires-python = ">=3.11"
+dependencies = ["pydantic>=2.6"]
+
+[project.scripts]
+agent-auditor = "auditor.cli:main"
