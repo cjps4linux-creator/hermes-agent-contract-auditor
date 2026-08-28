@@ -1,5 +1,5 @@
 from dataclasses import dataclass, field
-from typing import List, Dict  # noqa: UP035
+
 
 
 @dataclass(frozen=True)
@@ -10,7 +10,7 @@ class Rule:
     check: str
 
 
-BASE_RULES: List[Rule] = [
+BASE_RULES: list[Rule] = [
     Rule("R-001", "Identity present", "blocker", "Identity"),
     Rule("R-002", "Mission present", "blocker", "Mission"),
     Rule("R-003", "Scope present", "major", "Scope"),
@@ -38,13 +38,13 @@ class Finding:
 class Audit:
     passed: bool
     score: float
-    findings: List[Finding] = field(default_factory=list)
-    summary: Dict[str, int] = field(default_factory=dict)
+    findings: list[Finding] = field(default_factory=list)
+    summary: dict[str, int] = field(default_factory=dict)
 
 
 def audit(text: str) -> Audit:
-    findings: List[Finding] = []
-    counts: Dict[str, int] = {"blocker": 0, "major": 0, "minor": 0}
+    findings: list[Finding] = []
+    counts: dict[str, int] = {"blocker": 0, "major": 0, "minor": 0}
 
     for rule in BASE_RULES:
         missing = rule.check not in text
