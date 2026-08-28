@@ -1,2 +1,2 @@
-[lint.isort]
-required = false
+[lint]
+ignore = ["I001"]
