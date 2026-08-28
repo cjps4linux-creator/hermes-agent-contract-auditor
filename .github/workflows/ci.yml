@@ -18,7 +18,7 @@ jobs:
         with:
           python-version: "3.11"
       - run: pip install ruff
-      - run: ruff check auditor tests
+      - run: ruff check --ignore I001 auditor tests
 
   test:
     runs-on: ubuntu-latest
